@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "dirent.h": "c",
+        "PING.C": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
