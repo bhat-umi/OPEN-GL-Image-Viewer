@@ -99,31 +99,26 @@ void display()
      glViewport(0,0,cur_width,cur_height);
 
 
-    //tesing 
+   =
    
     //rotating
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    //gluOrtho2D(0,width+LR,0,height+TB);
-   // gluPerspective(90,cur_width/cur_height,0,100);
    
     gluOrtho2D(0+driftX,width+LR+driftX,0+driftY,height+TB+driftY);
-   // glOrtho(0,width+LR,0,height+TB,0,10);
+
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    //glTranslatef((cur_width)/2,(cur_height)/2,0);
+
    glTranslatef((width+LR)/2,(height+TB)/2,0);
     glRotatef(Rfilter.rotation,0,0,1);
     glTranslatef(-(width+LR)/2,-(height+TB)/2,0);
-    //glTranslatef(-(cur_width)/2,-(cur_height)/2,0);
-    //printf("cur w %d w=%d",cur_width,width);
-    fflush(stdout);
    glScalef(sx,sx,1);
    
    
     int R,G,B;
     int p=0;
-    //glPointSize(10);
+
     for (r=height;r>0;r--)
     {
          glBegin(GL_LINE_STRIP);
@@ -139,7 +134,7 @@ void display()
             }
             else
                 glColor3ub(R&CFilter.R,G&CFilter.G,B&CFilter.B);
-            //glColor3ub((*(data+p))&0x00,(*(data+p+1)),(*(data+p+2)));
+
             
                 glVertex2f(LR/2+c,r);
             p+=3;
@@ -168,7 +163,7 @@ void loadImage(int count,char **value)
      if(count ==2)
         strcpy(path,value[1]); //path spedified
 
-   // printf("\npath: %s %d\n",path,count);
+
    imageCount=list_image(path,images);
     if(!imageCount)
     {
