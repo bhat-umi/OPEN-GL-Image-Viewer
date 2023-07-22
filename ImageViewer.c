@@ -99,7 +99,7 @@ void display()
      glViewport(0,0,cur_width,cur_height);
 
 
-   =
+   
    
     //rotating
     glMatrixMode(GL_PROJECTION);
@@ -172,7 +172,7 @@ void loadImage(int count,char **value)
     }
 }
 
-void SpecialInput(int key, int , int )
+void SpecialInput(int key, int xx, int yy )
 {
      isSlideShow=0;
      clearFilters('A');
@@ -222,7 +222,7 @@ void driftU(int d)
   
     }
 }
-void keyboardListener(unsigned char key,int ,int)
+void keyboardListener(unsigned char key,int p ,int q)
 {
     isSlideShow=0;
     switch (key)
@@ -276,7 +276,7 @@ void keyboardListener(unsigned char key,int ,int)
     printf("key = %d",key);
     
 }
-void next(int)
+void next(int nn)
 {
     curImage=(curImage+1)%imageCount;
     clearFilters('A');
